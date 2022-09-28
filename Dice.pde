@@ -45,3 +45,61 @@ void draw() {
 void mousePressed() {
   Die rolled = new Die(width*7/8,height/2);
 }
+
+/*
+void setup() {
+  size(500, 300);
+  textAlign(CENTER, CENTER);
+  textSize(24);
+  noLoop();
+}
+
+
+
+void draw() {
+  int heads = 0;
+  
+  for (int y = 0; y < 3; y++) {
+    for (int x = 0; x < 5; x++) {
+      Coin one = new Coin(80 + x*80,70 + y*80);
+      one.show();
+      if (one.heads)
+        heads++;
+    }
+  }
+  
+  
+  System.out.println(heads);
+}
+void mousePressed() {
+  redraw();
+}
+class Coin {
+  //three member variables
+  boolean heads; 
+  int myX, myY;
+
+  //three member functions
+  Coin(int x, int y) //constructor
+  {
+    myX = x;
+    myY = y;
+    flip();
+  }
+  void flip()
+  {
+    heads = Math.random() < 0.5;
+  }
+  void show()
+  {
+    fill(200);
+    ellipse(myX,myY,70,70);
+    fill(0);
+    
+    if (heads)
+      text("H",myX,myY);
+    else
+      text("T",myX,myY);
+  }
+}
+*/

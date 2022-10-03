@@ -1,4 +1,4 @@
-float size = 55;
+float dieSize = 55;
 
 class Die {
  float posX, posY, roll; 
@@ -10,22 +10,22 @@ class Die {
  void show() {
    strokeWeight(1);
    fill(255);
-   rect(posX,posY,size,size);
+   rect(posX,posY,dieSize,dieSize);
    strokeWeight(8);
    if (roll%2 == 1) {
-     point(posX+size/2,posY+size/2);
+     point(posX+dieSize/2,posY+dieSize/2);
    }
    if (roll > 1) {
-     point(posX+size*3/4,posY+size*3/4);
-     point(posX+size/4,posY+size/4);     
+     point(posX+dieSize*3/4,posY+dieSize*3/4);
+     point(posX+dieSize/4,posY+dieSize/4);     
    }
    if (roll > 3) {
-     point(posX+size/4,posY+size*3/4);
-     point(posX+size*3/4,posY+size/4);  
+     point(posX+dieSize/4,posY+dieSize*3/4);
+     point(posX+dieSize*3/4,posY+dieSize/4);  
    }
    if (roll == 6) {
-     point(posX+size/4,posY+size/2);
-     point(posX+size*3/4,posY+size/2);  
+     point(posX+dieSize/4,posY+dieSize/2);
+     point(posX+dieSize*3/4,posY+dieSize/2);  
    }
  }
 }
@@ -41,7 +41,7 @@ void draw() {
   int sum = 0;
   for (int y = 0; y < 7; y++) {
     for (int x = 0; x < 8; x++) {
-      instance = new Die((x+1)*size*1.5,(y+1)*size*1.5);
+      instance = new Die((x+1)*dieSize*1.5,(y+1)*dieSize*1.5);
       instance.show();
       sum += instance.roll;
     }  

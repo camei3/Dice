@@ -1,4 +1,11 @@
-float dieSize = 55;
+void setup() {
+  size(800,800);
+  noLoop();
+}
+
+float dieCount = 12;
+float dieSize = (width/((dieCount + 2) + (dieCount + 1)/2))*8;
+
 
 class Die {
  float posX, posY, roll; 
@@ -11,7 +18,7 @@ class Die {
    strokeWeight(1);
    fill(255);
    rect(posX,posY,dieSize,dieSize);
-   strokeWeight(8);
+   strokeWeight((width/((dieCount + 2) + (dieCount + 1)/2))/6);
    if (roll%2 == 1) {
      point(posX+dieSize/2,posY+dieSize/2);
    }
@@ -30,17 +37,13 @@ class Die {
  }
 }
 
-void setup() {
-  size(800,800);
-  noLoop();
-}
 
 Die instance;
 
 void draw() {
   int sum = 0;
-  for (int y = 0; y < 7; y++) {
-    for (int x = 0; x < 8; x++) {
+  for (int y = 0; y < dieCount - 1; y++) {
+    for (int x = 0; x < dieCount; x++) {
       instance = new Die((x+1)*dieSize*1.5,(y+1)*dieSize*1.5);
       instance.show();
       sum += instance.roll;

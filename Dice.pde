@@ -3,7 +3,7 @@ void setup() {
   noLoop();
 }
 
-float dieCount = 12;
+float dieCount = 25;
 float dieSize = (width/((dieCount + 2) + (dieCount + 1)/2))*8;
 
 
@@ -42,7 +42,7 @@ Die instance;
 
 void draw() {
   int sum = 0;
-  for (int y = 0; y < dieCount - 1; y++) {
+  for (int y = 0; y < (int)( (height * 13/16 - dieSize/2) / (dieSize * 1.5)); y++) {
     for (int x = 0; x < dieCount; x++) {
       instance = new Die((x+1)*dieSize*1.5,(y+1)*dieSize*1.5);
       instance.show();
